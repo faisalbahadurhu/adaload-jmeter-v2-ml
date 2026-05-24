@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="adaload-jmeter-v2-ml" default="jar" basedir=".">
+    <property name="src.dir" value="src"/>
+    <property name="build.dir" value="build/classes"/>
+    <property name="dist.dir" value="dist"/>
+    <property name="jar.name" value="adaload-jmeter-v2-ml.jar"/>
+
+    <!-- Usage example:
+         ant -Djmeter.home=C:\Users\DELL\Downloads\apache-jmeter-5.6.3\apache-jmeter-5.6.3
+    -->
+    <path id="jmeter.classpath">
+        <fileset dir="${jmeter.home}/lib">
+            <include name="**/*.jar"/>
+        </fileset>
+        <fileset dir="${jmeter.home}/lib/ext">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${build.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${build.dir}" source="17" target="17" includeantruntime="false" debug="true">
+            <classpath refid="jmeter.classpath"/>
+        </javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="${dist.dir}"/>
+        <copy todir="${build.dir}/META-INF">
+            <fileset dir="META-INF"/>
+        </copy>
+        <jar destfile="${dist.dir}/${jar.name}" basedir="${build.dir}" manifest="META-INF/MANIFEST.MF"/>
+    </target>
+</project>

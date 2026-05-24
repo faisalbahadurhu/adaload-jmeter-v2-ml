@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Implementation-Title: AdaLoad-JMeter
+Implementation-Version: 2.0-ml-fix6
+Implementation-Vendor: AdaLoad Research Prototype
+JMeter-Skip-Class-Scanning: false
+Created-By: ChatGPT
+
