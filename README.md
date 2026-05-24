@@ -1,7 +1,7 @@
 This is project is a new JMeter Plugin which is machine learning based named AdaLoad_Jmeter
 # 🧠 AdaLoad-JMeter 
 
-**AdaLoad-JMeter** This project presents an intelligent  workload controller for Apache JMeter that is machine learning based.
+**AdaLoad-JMeter** presents an intelligent  workload controller for Apache JMeter that is machine learning based.
 
 ---
 
